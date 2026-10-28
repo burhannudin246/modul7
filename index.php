@@ -1,38 +1,7 @@
-<!DOCTYPE html>
-<html lang="id">
+<?php
 
-<head>
-    <meta charset="UTF-8">
-    <title>Daftar Mahasiswa</title>
-</head>
+require_once __DIR__ . '/app/Controllers/MahasiswaController.php';
 
-<body>
-
-    <h2>Daftar Mahasiswa 2026</h2>
-    <p>Data ditampilkan melalui pola mVC sederhana</p>
-
-    <table border="1" cellpadding="8">
-        <thead>
-            <tr>
-                <th>No</th>
-                <th>NIM</th>
-                <th>Nama</th>
-                <th>Program Studi</th>
-            </tr>
-        </thead>
-
-        <tbody>
-            <?php foreach ($data["mahasiswa"] as $index => $mhs): ?>
-                <tr>
-                    <td><?= $index + 1 ?></td>
-                    <td><?= $mhs["nim"] ?></td>
-                    <td><?= $mhs["nama"] ?></td>
-                    <td><?= $mhs["prodi"] ?></td>
-                </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
-
-</body>
-
-</html>
+$controller = new MahasiswaController();
+$controller->index();
+?>
